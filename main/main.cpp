@@ -1,14 +1,30 @@
 // main.cpp
-#include "App.hpp"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_log.h"
+// #include "App.hpp"
+// #include "freertos/FreeRTOS.h"
+// #include "freertos/task.h"
+// #include "esp_log.h"
+
+#include <stdio.h>
+
+#include "DString.hpp"
 
 extern "C" void app_main() {
-  App app;
-  app.init();
-  app.run();
+  DString str(8);
 
-  // Prevent app_main from returning
-  vTaskDelete(NULL);
+  str.add("Hello");
+  str.add(" world");
+  str.add("!");
+
+  // bool res = str.sprintf("%d", 12);
+
+  // printf("Res = %s\n", res?"OK":"Overflow");
+
+  printf("%s\n", str.c_str());
+
+  // App app;
+  // app.init();
+  // app.run();
+
+  // // Prevent app_main from returning
+  // vTaskDelete(NULL);
 }

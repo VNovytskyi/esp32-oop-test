@@ -3,6 +3,8 @@ idf_component_register(
     "main.cpp"
     "app.cpp"
     "nvs.cpp"
+    "./utils/DString.cpp"
   INCLUDE_DIRS
     "."
+    "./utils"
 )
